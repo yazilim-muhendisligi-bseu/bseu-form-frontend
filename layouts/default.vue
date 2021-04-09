@@ -9,13 +9,13 @@ v-app(style="height: 100vh")
   )
     v-app-bar-nav-icon
 
-    v-toolbar-title Title
+    v-toolbar-title BŞEÜ TEST APP
 
     v-spacer
 
-    v-btn
-      v-icon mdi-magnify
-      span Testler
+    v-btn(@click="$router.push('/')")
+      v-icon mdi-home
+      span Anasayfa
   v-sheet#scrolling-techniques-7.overflow-y-auto(style="margin-top: 60px")
     v-container(style="height: 1500px")
       nuxt
