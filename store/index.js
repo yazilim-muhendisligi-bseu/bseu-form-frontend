@@ -28,7 +28,16 @@ export const actions = {
         return axios.get('http://localhost:8080/test/' + id)
             .then(res => {
                 commit('setTest', res.data)
+                return res.data
             })
+            .catch(err => {
+                console.log(err)
+            })
+    },
+    createTest({ }, { title, questions, category }) {
+        return axios.post('http://localhost:8080/test/', {
+            title, questions, category
+        })
             .catch(err => {
                 console.log(err)
             })

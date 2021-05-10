@@ -9,11 +9,19 @@ div
 import { mapState } from "vuex";
 export default {
   name: "Test",
-  computed: {
-    ...mapState(["test"]),
+  data() {
+    return {
+      test: {
+        title: "",
+        questions: [],
+      },
+    };
   },
-  fetch() {
-    this.$store.dispatch("getTestById", this.$route.params.id);
+  async fetch() {
+    this.test = await this.$store.dispatch(
+      "getTestById",
+      this.$route.params.id
+    );
   },
 };
 </script>
